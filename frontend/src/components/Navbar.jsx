@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { TrendingUp } from 'lucide-react';
+import { track } from 'analytiq' 
 
 export default function Navbar({ onNavigateHome, onNavigatePredict, currentView }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    track('Home_page_view', { page: 'Home' })
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -36,13 +38,14 @@ export default function Navbar({ onNavigateHome, onNavigatePredict, currentView 
               Home
             </button>
             <button
-              onClick={onNavigatePredict}
+              onClick={() => { onNavigatePredict(); track('Predicct Clicked '); }}
               className={`text-sm hover:text-white transition-colors duration-200 font-medium ${currentView === 'predict' ? 'text-white' : 'text-slate-400'}`}
             >
               Predict
             </button>
             <a
               href="#documentation"
+              onClick={() => track('Documenattion clicked ')}
               className="text-sm text-slate-400 hover:text-white transition-colors duration-200 font-medium"
             >
               Documentation
@@ -51,7 +54,7 @@ export default function Navbar({ onNavigateHome, onNavigatePredict, currentView 
 
           {/* CTA */}
           <button
-            onClick={onNavigatePredict}
+            onClick={() => { onNavigatePredict(); track('get_Stated Clicked '); }}
             className="btn-primary hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm cursor-pointer border-none"
           >
             Get Started
