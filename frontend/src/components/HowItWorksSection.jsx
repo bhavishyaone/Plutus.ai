@@ -36,11 +36,9 @@ const steps = [
 export default function HowItWorksSection() {
     return (
         <section className="py-28 relative overflow-hidden">
-            {/* Glow blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-violet-700/5 blur-[100px] rounded-full" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Heading */}
                 <div className="text-center mb-20 space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-widest text-violet-400">
                         How It Works
@@ -54,18 +52,15 @@ export default function HowItWorksSection() {
                     </p>
                 </div>
 
-                {/* Steps */}
                 <div className="relative grid md:grid-cols-3 gap-8 lg:gap-4">
                     {steps.map((step, i) => {
                         const Icon = step.icon;
                         return (
                             <div key={step.number} className="relative flex flex-col items-center text-center group animate-fade-up" style={{ animationDelay: `${i * 0.2}s` }}>
-                                {/* Connector line (between steps) */}
                                 {i < steps.length - 1 && (
                                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-px connector-line" style={{ left: '65%' }} />
                                 )}
 
-                                {/* Step bubble */}
                                 <div
                                     className={`relative w-20 h-20 rounded-2xl ${step.iconBg} flex items-center justify-center mb-6 transition-all duration-400`}
                                     style={{ boxShadow: `0 0 0 0 ${step.glow}` }}
@@ -73,7 +68,6 @@ export default function HowItWorksSection() {
                                     onMouseLeave={(e) => (e.currentTarget.style.boxShadow = `0 0 0 0 ${step.glow}`)}
                                 >
                                     <Icon className={`w-8 h-8 ${step.iconColor}`} />
-                                    {/* Step number */}
                                     <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-br from-violet-600 to-violet-800 text-white text-[10px] font-bold flex items-center justify-center shadow-lg">
                                         {i + 1}
                                     </span>
