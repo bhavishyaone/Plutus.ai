@@ -10,7 +10,6 @@ const riskFactors = [
 function DashboardMockup() {
     return (
         <div className="relative w-full max-w-[480px] animate-float" style={{ animationDelay: '0.3s' }}>
-            {/* Multi-layer ambient glow */}
             <div
                 className="absolute -inset-8 rounded-3xl pointer-events-none"
                 style={{
@@ -19,9 +18,7 @@ function DashboardMockup() {
                 }}
             />
 
-            {/* Card */}
             <div className="relative glass-card p-7 space-y-5 animate-count-up" style={{ animationDelay: '0.5s' }}>
-                {/* Header row */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse inline-block" />
@@ -30,7 +27,6 @@ function DashboardMockup() {
                     <span className="text-xs text-slate-500 bg-white/5 border border-white/8 px-2.5 py-1 rounded-lg">Live</span>
                 </div>
 
-                {/* Big score */}
                 <div className="text-center py-4">
                     <div
                         className="text-[84px] font-bold leading-none tabular-nums"
@@ -47,7 +43,6 @@ function DashboardMockup() {
                     <div className="text-slate-400 text-sm mt-1 tracking-wide">Credit Risk Score</div>
                 </div>
 
-                {/* Category + PD */}
                 <div className="grid grid-cols-2 gap-3">
                     <div className="bg-white/4 border border-white/6 rounded-xl p-3.5 transition-all duration-300 ease-out hover:bg-white/6">
                         <div className="text-xs text-slate-500 mb-1.5">Risk Category</div>
@@ -65,7 +60,6 @@ function DashboardMockup() {
                     </div>
                 </div>
 
-                {/* Score bar */}
                 <div>
                     <div className="flex justify-between text-xs text-slate-500 mb-2">
                         <span>300</span>
@@ -85,7 +79,6 @@ function DashboardMockup() {
                     </div>
                 </div>
 
-                {/* Key Risk Factors */}
                 <div>
                     <div className="text-xs text-slate-600 uppercase tracking-widest mb-3">Key Risk Factors</div>
                     <div className="space-y-2.5">
@@ -98,7 +91,6 @@ function DashboardMockup() {
                     </div>
                 </div>
 
-                {/* Recommendation chip */}
                 <div className="bg-emerald-500/8 border border-emerald-400/20 rounded-xl px-4 py-3 flex items-center gap-2.5 transition-all duration-300 ease-out">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span className="text-xs text-emerald-300 font-medium">Recommended: Approve at standard rate</span>
@@ -114,13 +106,11 @@ export default function HeroSection({ onNavigate }) {
             id="home"
             className="relative w-full min-h-screen flex items-center overflow-hidden"
         >
-            {/* Base background */}
             <div
                 className="absolute inset-0 w-full h-full"
                 style={{ background: 'linear-gradient(160deg, oklch(0.07 0.025 270) 0%, #050c1f 45%, oklch(0.06 0.02 265) 100%)' }}
             />
 
-            {/* Subtle ambient orb top-right */}
             <div
                 className="absolute w-[900px] h-[900px] rounded-full pointer-events-none animate-orb-a"
                 style={{
@@ -130,7 +120,6 @@ export default function HeroSection({ onNavigate }) {
                 }}
             />
 
-            {/* Animated orb B — violet bottom-left */}
             <div
                 className="absolute w-[700px] h-[700px] rounded-full pointer-events-none animate-orb-b"
                 style={{
@@ -140,7 +129,6 @@ export default function HeroSection({ onNavigate }) {
                 }}
             />
 
-            {/* Subtle dot grid */}
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -150,13 +138,10 @@ export default function HeroSection({ onNavigate }) {
                 }}
             />
 
-            {/* Content */}
             <div className="relative z-10 w-full px-12 lg:px-20 pt-28 pb-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-10 items-center">
 
-                    {/* ── Left: copy ── */}
                     <div className="flex flex-col gap-8">
-                        {/* Badge */}
                         <div className="animate-fade-up">
                             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-violet-300 tracking-wide"
                                 style={{
@@ -170,7 +155,6 @@ export default function HeroSection({ onNavigate }) {
                             </span>
                         </div>
 
-                        {/* Heading — text-7xl on desktop */}
                         <h1
                             className="animate-fade-up delay-100 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
                             style={{ lineHeight: 1.06 }}
@@ -184,7 +168,6 @@ export default function HeroSection({ onNavigate }) {
                             Predict borrower risk, analyze financial behavior, and generate structured lending recommendations using advanced machine learning.
                         </p>
 
-                        {/* CTAs */}
                         <div className="animate-fade-up delay-300 flex flex-wrap items-center gap-4">
                             <button
                                 id="upload-data-btn"
@@ -203,7 +186,6 @@ export default function HeroSection({ onNavigate }) {
                             </button>
                         </div>
 
-                        {/* Stats row */}
                         <div className="animate-fade-up delay-400 flex items-center gap-0 pt-2">
                             {[
                                 { value: '99.1%', label: 'Model Accuracy' },
@@ -221,14 +203,12 @@ export default function HeroSection({ onNavigate }) {
                         </div>
                     </div>
 
-                    {/* ── Right: Dashboard mockup ── */}
                     <div className="flex justify-center lg:justify-end items-center animate-fade-in delay-300">
                         <DashboardMockup />
                     </div>
                 </div>
             </div>
 
-            {/* Bottom fade into next section */}
             <div
                 className="absolute bottom-0 inset-x-0 h-40 pointer-events-none"
                 style={{ background: 'linear-gradient(to top, oklch(0.06 0.02 265) 0%, transparent 100%)' }}
